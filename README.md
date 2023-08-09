@@ -2,6 +2,36 @@
 A clone of the AirBnB Website using Python.
 The goal of the project is to master the fundamentals of Higher level programming. Finally, a server will be deployed with a simple copy of the AirBnB Website. 
 
-Functionalities of the command interpreter:
- - Create a new object.
- - BaseModel class which defines all common attributes for other classes.
+Functions of the command interpreter:
+ -  Create a new object. 
+ - BaseModel class which defines all common attributes for other classes. 
+## Running Tests
+
+To run tests, run the following command in the respective directory
+Example: 
+
+```bash
+python3 -m unittest tests/test_models/test_base_model.py
+```
+To test with unit tests:
+```
+python3 -m unittest discover tests
+```
+
+
+## Usage/Examples
+
+```python
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
+
