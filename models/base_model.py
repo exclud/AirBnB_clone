@@ -36,3 +36,10 @@ class BaseModel:
         """The function updates the update_at instance with the current time
         """
         self.updated_at = datetime.now()
+
+    def to_dict(self):
+        instance_dict = self.__dict__.copy()
+        instance_dict['__class__'] = self.__class__.__name__
+        instance_dict['created_at'] = self.created_at.isoformat()
+        instance_dict['updated_at'] = self.updated_at.isoformat()
+        return instance_dict
