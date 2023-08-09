@@ -38,6 +38,11 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
+        """Returns Dictionary Containing all keys of the instance
+
+        Returns:
+            instance_dict: Dictionary Representation of the instance.
+        """
         instance_dict = self.__dict__.copy()
         instance_dict['__class__'] = self.__class__.__name__
         instance_dict['created_at'] = self.created_at.isoformat()
