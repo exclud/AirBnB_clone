@@ -13,14 +13,22 @@ class BaseModel:
     """The BaseModel Class from which other classes are derived.
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Initialization of the attributes
         """
-        self.id = str(uuid.uuid4())
+        if kwargs:
+            for key, value in kwargs.items():
+                if key != '__class__':
+                    if key == 'created_at' or key == 'updated_at':
+                        setattr(self, key, datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+                    else:
+                        setattr(self, key, value)
+        else:
+            self.id = str(uuid.uuid4())
         # unique identifier for each instance
-        self.created_at = datetime.now()
+            self.created_at = self.updated_at = datetime.now
         # assigns the current datetime when a new instance is created.
-        self.updated_at = datetime.now()
+            # self.updated_at = datetime.now()
         # assign the current time and update it when an object is changed.
 
     def __str__(self):
