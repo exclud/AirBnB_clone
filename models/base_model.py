@@ -4,7 +4,7 @@
 
 import models
 import uuid
-import datetime as datetime
+from datetime import datetime
 
 time = "%Y-%m-%dT%H:%M:%S.%f"
 
@@ -25,8 +25,11 @@ class BaseModel:
                         setattr(self, key, value)
         else:
             self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = self.created_at
+            
         # unique identifier for each instance
-            self.created_at = self.updated_at = datetime.now
+            # self.created_at = self.updated_at = datetime.now
         # assigns the current datetime when a new instance is created.
             # self.updated_at = datetime.now()
         # assign the current time and update it when an object is changed.
@@ -49,10 +52,12 @@ class BaseModel:
         """Convert instance attributes to a dictionary
 
         Returns:
-            obj_dict: Dictionary Representation of the instance.
+            obj_dict: Dictionary representation
         """
         obj_dict = self.__dict__.copy()
-        obj_dict['__class__'] = self.__class__.__name__
-        obj_dict['created_at'] = self.created_at.isoformat()
-        obj_dict['updated_at'] = self.updated_at.isoformat()
+        if "created_at" in obj_dict:
+            obj_dict["created_at"] = obj_dict["created_at"].strftime(time)
+        if "updated_at" in obj_dict:
+            obj_dict["updated_at"] = obj_dict["updated_at"].strftime(time)
+        obj_dict["__class__"] = self.__class__.__name__
         return obj_dict
