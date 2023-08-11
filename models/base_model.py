@@ -27,7 +27,9 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = self.created_at
-            
+        models.storage.new(self)
+
+
         # unique identifier for each instance
             # self.created_at = self.updated_at = datetime.now
         # assigns the current datetime when a new instance is created.
@@ -45,8 +47,10 @@ class BaseModel:
 
     def save(self):
         """The function updates the update_at instance with the current time
+        Calls the save method of storage
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Convert instance attributes to a dictionary
