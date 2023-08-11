@@ -34,4 +34,3 @@ class TestUser(unittest.TestCase):
         self.assertTrue(hasattr(new_user, 'password'))
         self.assertTrue(hasattr(new_user, 'first_name'))
         self.assertTrue(hasattr(new_user, 'last_name'))
-    
