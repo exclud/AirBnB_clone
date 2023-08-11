@@ -20,7 +20,8 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key != '__class__':
                     if key == 'created_at' or key == 'updated_at':
-                        setattr(self, key, datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f'))
+                        setattr(self, key, datetime.strptime(
+                            value, '%Y-%m-%dT%H:%M:%S.%f'))
                     else:
                         setattr(self, key, value)
         else:
@@ -29,11 +30,10 @@ class BaseModel:
             self.updated_at = self.created_at
         models.storage.new(self)
 
-
         # unique identifier for each instance
-            # self.created_at = self.updated_at = datetime.now
+        # self.created_at = self.updated_at = datetime.now
         # assigns the current datetime when a new instance is created.
-            # self.updated_at = datetime.now()
+        # self.updated_at = datetime.now()
         # assign the current time and update it when an object is changed.
 
     def __str__(self):

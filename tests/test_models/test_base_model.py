@@ -60,4 +60,4 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue('created_at' in model_dict)
         self.assertTrue('updated_at' in model_dict)
 
-
+    
