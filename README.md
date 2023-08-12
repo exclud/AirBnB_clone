@@ -19,9 +19,9 @@ To test with unit tests:
 ```
 ~/AirBnB_clone on main !1 ?2                                                                                                                     at 14:06:43
 ❯ python3 -m unittest discover tests
-.......
+...............................
 ----------------------------------------------------------------------
-Ran 7 tests in 0.004s
+Ran 31 tests in 0.004s
 
 OK
 ```
