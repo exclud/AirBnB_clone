@@ -24,6 +24,18 @@ To test with unit tests:
 Ran 31 tests in 0.004s
 
 OK
+
+```
+
+Unit tests must also pass in non-interactive mode:
+```
+❯ echo "python3 -m unittest discover tests" | bash
+...............................
+----------------------------------------------------------------------
+Ran 31 tests in 0.005s
+
+OK
+
 ```
 
 
