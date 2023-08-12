@@ -8,7 +8,7 @@ import json
 import os
 from datetime import datetime
 FileStorage = file_storage.FileStorage
-classes = { "BaseModel": BaseModel, }
+classes = {"BaseModel": BaseModel, }
 
 
 class TestFileStorage(unittest.TestCase):
@@ -19,7 +19,7 @@ class TestFileStorage(unittest.TestCase):
         storage = file_storage.FileStorage()
         all_objects = storage.all()
         self.assertIsInstance(all_objects, dict)
-        
+
     # def test_new_function(self):
     #     storage = file_storage.FileStorage()
     #     model = BaseModel()

@@ -16,9 +16,10 @@ class TestBaseModel(unittest.TestCase):
         """Tests for the __str__ function to check if the outputs are correct
         """
         model = BaseModel()
-        expected_output = "[BaseModel] ({}) {}".format(model.id, model.__dict__)
+        expected_output = "[BaseModel] ({}) {}".format
+        (model.id, model.__dict__)
         self.assertEqual(str(model), expected_output)
-    
+
     def test_save(self):
         """Tests for the save function that it updates to the current time
         """
@@ -49,7 +50,8 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(model.updated_at, datetime)
 
     def test_to_dict(self):
-        """Test whether the to_dict method correctly converts the instance attributes
+        """Test whether the to_dict method
+        correctly converts the instance attributes
         to a dictionary representation
         """
         model = BaseModel()
@@ -59,5 +61,3 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue('id' in model_dict)
         self.assertTrue('created_at' in model_dict)
         self.assertTrue('updated_at' in model_dict)
-
-    
