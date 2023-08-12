@@ -12,7 +12,7 @@ class State(BaseModel):
         BaseModel (_type_): The main class which is being inherited from
     """
     name = ""
-    
+
     def __init__(self, *args, **kwargs):
         """initialization of the State Class"""
         super().__init__(*args, **kwargs)

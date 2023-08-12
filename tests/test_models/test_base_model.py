@@ -16,9 +16,8 @@ class TestBaseModel(unittest.TestCase):
         """Tests for the __str__ function to check if the outputs are correct
         """
         model = BaseModel()
-        expected_output = "[BaseModel] ({}) {}".format
-        (model.id, model.__dict__)
-        self.assertEqual(str(model), expected_output)
+        string = "[BaseModel] ({}) {}".format(model.id, model.__dict__)
+        self.assertEqual(string, str(model))
 
     def test_save(self):
         """Tests for the save function that it updates to the current time
