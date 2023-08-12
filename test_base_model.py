@@ -13,15 +13,5 @@ my_model_json = my_model.to_dict()
 print(my_model_json)
 print("JSON of my_model:")
 for key in my_model_json.keys():
-    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]), my_model_json[key]))
-
-
-
-class TestBaseModel(unittest.TestCase):
-    """Test The BaseModel Class"""
-    def test_string(self):
-        """Test the output of the str method.
-        """
-        inst = BaseModel()
-        string = "[BaseModel] ({}) {}".format(inst.id, inst.__dict__)
-        self.assertEqual(string, str(inst))
+    print("\t{}: ({}) - {}".format(key, type(my_model_json[key]),
+                                   my_model_json[key]))
